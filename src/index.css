@@ -105,13 +105,8 @@
     resize: vertical;
   }
 
-  /* Remove default focus outlines — components handle their own */
+  /* Remove default focus outline — each component handles its own via Tailwind */
   :focus {
     outline: none;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-primary-500);
-    outline-offset: 2px;
   }
 }
