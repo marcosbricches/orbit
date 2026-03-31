@@ -11,10 +11,12 @@ export interface BadgeProps {
 
 const variantStyles: Record<BadgeVariant, string> = {
   default: 'bg-surface-alt text-text-secondary dark:bg-dark-border dark:text-text-inverse',
-  success: 'bg-status-success/10 text-status-success dark:bg-status-success/20',
-  warning: 'bg-status-warning/10 text-status-warning dark:bg-status-warning/20',
-  error: 'bg-status-error/10 text-status-error dark:bg-status-error/20',
-  info: 'bg-status-info/10 text-status-info dark:bg-status-info/20',
+  success:
+    'bg-status-success/10 text-status-success-fg dark:bg-status-success/20 dark:text-status-success',
+  warning:
+    'bg-status-warning/10 text-status-warning-fg dark:bg-status-warning/20 dark:text-status-warning',
+  error: 'bg-status-error/10 text-status-error-fg dark:bg-status-error/20 dark:text-status-error',
+  info: 'bg-status-info/10 text-status-info-fg dark:bg-status-info/20 dark:text-status-info',
 }
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
