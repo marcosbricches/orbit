@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
   createRootRoute,
   createRoute,
@@ -5,9 +6,17 @@ import {
   redirect,
   Outlet,
   RouterProvider,
+  useNavigate,
 } from '@tanstack/react-router'
 import { AppLayout } from '@/app/layout/AppLayout'
 import { DesignSystemPage } from '@/features/design-system/DesignSystemPage'
+import { LoginPage } from '@/features/auth/components/LoginPage'
+import { RegisterPage } from '@/features/auth/components/RegisterPage'
+import { ProjectList } from '@/features/projects/components/ProjectList'
+import { ProjectDetail } from '@/features/projects/components/ProjectDetail'
+import { TasksPage } from '@/features/tasks/components/TasksPage'
+import { DashboardPage } from '@/features/dashboard/components/DashboardPage'
+import { useAuth } from '@/shared/hooks/use-auth'
 
 /* ---------- Root ---------- */
 
@@ -20,29 +29,42 @@ const rootRoute = createRootRoute({
 const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/login',
-  component: () => (
-    <div className="flex min-h-screen items-center justify-center bg-background dark:bg-dark-bg">
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">Login</h1>
-    </div>
-  ),
+  component: LoginPage,
 })
 
 const registerRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/register',
-  component: () => (
-    <div className="flex min-h-screen items-center justify-center bg-background dark:bg-dark-bg">
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">Register</h1>
-    </div>
-  ),
+  component: RegisterPage,
 })
 
-/* ---------- Layout route (protected) ---------- */
+/* ---------- Protected Layout ---------- */
+
+const ProtectedLayout = () => {
+  const navigate = useNavigate()
+  const isAuthenticated = useAuth((s) => s.isAuthenticated)
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate({ to: '/login' })
+    }
+  }, [isAuthenticated, navigate])
+
+  if (!isAuthenticated) return null
+
+  return <AppLayout />
+}
 
 const layoutRoute = createRoute({
   getParentRoute: () => rootRoute,
   id: 'layout',
-  component: AppLayout,
+  beforeLoad: () => {
+    const { isAuthenticated } = useAuth.getState()
+    if (!isAuthenticated) {
+      throw redirect({ to: '/login' })
+    }
+  },
+  component: ProtectedLayout,
 })
 
 /* ---------- Index redirect ---------- */
@@ -60,47 +82,25 @@ const indexRoute = createRoute({
 const dashboardRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: '/dashboard',
-  component: () => (
-    <div>
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">Dashboard</h1>
-      <p className="mt-2 text-text-secondary">Welcome to Orbit.</p>
-    </div>
-  ),
+  component: DashboardPage,
 })
 
 const projectsRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: '/projects',
-  component: () => (
-    <div>
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">Projects</h1>
-      <p className="mt-2 text-text-secondary">All projects will appear here.</p>
-    </div>
-  ),
+  component: ProjectList,
 })
 
 const projectDetailRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: '/projects/$projectId',
-  component: () => (
-    <div>
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">
-        Project Detail
-      </h1>
-      <p className="mt-2 text-text-secondary">Project details will appear here.</p>
-    </div>
-  ),
+  component: ProjectDetail,
 })
 
 const tasksRoute = createRoute({
   getParentRoute: () => layoutRoute,
   path: '/tasks',
-  component: () => (
-    <div>
-      <h1 className="text-2xl font-semibold text-text-primary dark:text-text-inverse">Tasks</h1>
-      <p className="mt-2 text-text-secondary">All tasks will appear here.</p>
-    </div>
-  ),
+  component: TasksPage,
 })
 
 const designSystemRoute = createRoute({

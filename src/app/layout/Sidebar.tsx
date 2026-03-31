@@ -48,14 +48,16 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
             to={to}
             className={cn(
               'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-              'text-text-secondary hover:bg-surface-alt hover:text-text-primary',
-              'dark:text-text-inverse/70 dark:hover:bg-dark-bg dark:hover:text-text-inverse',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
               collapsed && 'justify-center px-2',
             )}
             activeProps={{
               className:
-                'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-500 hover:bg-primary-100 dark:hover:bg-primary-500/20',
+                'bg-primary-50 text-primary-600 hover:bg-primary-100 dark:bg-primary-500/10 dark:text-primary-500 dark:hover:bg-primary-500/20',
+            }}
+            inactiveProps={{
+              className:
+                'text-text-secondary hover:bg-surface-alt hover:text-text-primary dark:text-text-inverse/70 dark:hover:bg-dark-bg dark:hover:text-text-inverse',
             }}
           >
             <Icon className="size-5 shrink-0" />
