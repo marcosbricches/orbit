@@ -106,13 +106,13 @@ export const DesignSystemPage = () => {
   const { toasts, addToast, removeToast } = useToast()
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-8">
-      <h1 className="text-4xl font-bold text-text-primary dark:text-text-inverse mb-2">
-        Orbit Design System
-      </h1>
-      <p className="text-text-secondary mb-8">Component showcase and design token reference.</p>
-
-      <Separator className="my-8" />
+    <div className="max-w-5xl mx-auto px-6 py-12 space-y-16">
+      <header>
+        <h1 className="text-4xl font-bold text-text-primary dark:text-text-inverse mb-2">
+          Orbit Design System
+        </h1>
+        <p className="text-text-secondary">Component showcase and design token reference.</p>
+      </header>
 
       {/* 1. Color Palette */}
       <section>
@@ -126,8 +126,6 @@ export const DesignSystemPage = () => {
           ))}
         </div>
       </section>
-
-      <Separator className="my-8" />
 
       {/* 2. Typography */}
       <section>
@@ -159,8 +157,6 @@ export const DesignSystemPage = () => {
           ))}
         </div>
       </section>
-
-      <Separator className="my-8" />
 
       {/* 3. Interactive Components */}
       <section>
@@ -196,7 +192,7 @@ export const DesignSystemPage = () => {
           </div>
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Input */}
         <SubHeading>Input</SubHeading>
@@ -207,7 +203,7 @@ export const DesignSystemPage = () => {
           <Input label="Disabled" placeholder="Cannot edit" disabled />
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Select */}
         <SubHeading>Select</SubHeading>
@@ -222,7 +218,7 @@ export const DesignSystemPage = () => {
           <Select label="Disabled" options={sampleOptions} disabled placeholder="Locked" />
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Textarea */}
         <SubHeading>Textarea</SubHeading>
@@ -232,7 +228,7 @@ export const DesignSystemPage = () => {
           <Textarea label="Disabled" placeholder="Read only" disabled />
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Checkbox */}
         <SubHeading>Checkbox</SubHeading>
@@ -242,7 +238,7 @@ export const DesignSystemPage = () => {
           <Checkbox label="Disabled" checked={false} disabled />
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Toggle */}
         <SubHeading>Toggle</SubHeading>
@@ -254,8 +250,6 @@ export const DesignSystemPage = () => {
           <Toggle label="Small on" size="sm" checked={true} onChange={() => {}} />
         </div>
       </section>
-
-      <Separator className="my-8" />
 
       {/* 4. Display Components */}
       <section>
@@ -278,7 +272,7 @@ export const DesignSystemPage = () => {
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Badge */}
         <SubHeading>Badge</SubHeading>
@@ -290,7 +284,7 @@ export const DesignSystemPage = () => {
           ))}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Avatar */}
         <SubHeading>Avatar</SubHeading>
@@ -309,7 +303,7 @@ export const DesignSystemPage = () => {
           ))}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Skeleton */}
         <SubHeading>Skeleton</SubHeading>
@@ -328,8 +322,6 @@ export const DesignSystemPage = () => {
           </div>
         </div>
       </section>
-
-      <Separator className="my-8" />
 
       {/* 5. Overlay Components */}
       <section>
@@ -350,7 +342,7 @@ export const DesignSystemPage = () => {
           </div>
         </Dialog>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Tooltip */}
         <SubHeading>Tooltip</SubHeading>
@@ -377,7 +369,7 @@ export const DesignSystemPage = () => {
           </Tooltip>
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* Toast */}
         <SubHeading>Toast</SubHeading>
@@ -407,8 +399,6 @@ export const DesignSystemPage = () => {
         <ToastContainer toasts={toasts} onRemove={removeToast} />
       </section>
 
-      <Separator className="my-8" />
-
       {/* 6. Layout Components */}
       <section>
         <SectionHeading>Layout Components</SectionHeading>
@@ -426,7 +416,7 @@ export const DesignSystemPage = () => {
           <p className="text-sm text-text-secondary">Vertical (between items above)</p>
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* EmptyState */}
         <SubHeading>EmptyState</SubHeading>
@@ -442,7 +432,7 @@ export const DesignSystemPage = () => {
           />
         </Card>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* ErrorState */}
         <SubHeading>ErrorState</SubHeading>
@@ -454,7 +444,7 @@ export const DesignSystemPage = () => {
           />
         </Card>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         {/* LoadingState */}
         <SubHeading>LoadingState</SubHeading>
@@ -473,8 +463,6 @@ export const DesignSystemPage = () => {
           </Card>
         </div>
       </section>
-
-      <Separator className="my-8" />
 
       {/* 7. Spacing & Radius */}
       <section>
@@ -495,7 +483,7 @@ export const DesignSystemPage = () => {
           ))}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-8" />
 
         <SubHeading>Spacing Scale</SubHeading>
         <div className="flex flex-col gap-3">
@@ -507,8 +495,6 @@ export const DesignSystemPage = () => {
           ))}
         </div>
       </section>
-
-      <div className="h-16" />
     </div>
   )
 }

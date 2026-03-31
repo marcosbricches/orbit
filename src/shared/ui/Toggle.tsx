@@ -15,9 +15,9 @@ const trackStyles: Record<ToggleSize, string> = {
   md: 'h-6 w-11',
 }
 
-const thumbStyles: Record<ToggleSize, { base: string; translate: string }> = {
-  sm: { base: 'h-3.5 w-3.5', translate: 'translate-x-4' },
-  md: { base: 'h-4 w-4', translate: 'translate-x-5' },
+const thumbStyles: Record<ToggleSize, { base: string; checked: string; unchecked: string }> = {
+  sm: { base: 'h-3 w-3', checked: 'translate-x-[18px]', unchecked: 'translate-x-[3px]' },
+  md: { base: 'h-4 w-4', checked: 'translate-x-[22px]', unchecked: 'translate-x-[3px]' },
 }
 
 export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
@@ -46,9 +46,9 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
         >
           <span
             className={cn(
-              'pointer-events-none inline-block rounded-full bg-surface shadow-sm transition-transform dark:bg-text-inverse',
+              'pointer-events-none absolute top-1/2 -translate-y-1/2 rounded-full bg-surface shadow-sm transition-transform duration-200 dark:bg-text-inverse',
               thumbStyles[size].base,
-              checked ? thumbStyles[size].translate : 'translate-x-0.5',
+              checked ? thumbStyles[size].checked : thumbStyles[size].unchecked,
             )}
             aria-hidden="true"
           />
