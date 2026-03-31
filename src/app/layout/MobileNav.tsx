@@ -50,7 +50,7 @@ export const MobileNav = ({ open, onClose }: MobileNavProps) => {
                 onClick={onClose}
                 className={cn(
                   'rounded-md p-2 text-text-secondary transition-colors',
-                  'hover:bg-surface-alt hover:text-text-primary',
+                  'hover:bg-surface-alt hover:text-text-primary dark:hover:bg-dark-border dark:hover:text-text-inverse',
                   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
                 )}
                 aria-label="Close navigation menu"
@@ -74,7 +74,7 @@ export const MobileNav = ({ open, onClose }: MobileNavProps) => {
                   )}
                   activeProps={{
                     className:
-                      'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10',
+                      'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-500 hover:bg-primary-100 dark:hover:bg-primary-500/20',
                   }}
                 >
                   <Icon className="size-5 shrink-0" />

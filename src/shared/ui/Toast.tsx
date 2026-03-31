@@ -48,7 +48,7 @@ export function Toast({ message, variant, onClose }: ToastProps) {
       {onClose && (
         <button
           onClick={onClose}
-          className="text-text-secondary hover:text-text-primary transition-colors shrink-0 p-0.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+          className="text-text-secondary hover:text-text-primary hover:bg-surface-alt dark:hover:bg-dark-border dark:hover:text-text-inverse transition-colors shrink-0 p-0.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
           aria-label="Dismiss notification"
         >
           <X className="w-4 h-4" />

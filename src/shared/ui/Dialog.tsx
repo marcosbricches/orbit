@@ -67,7 +67,7 @@ export function Dialog({ open, onClose, title, children, size = 'md' }: DialogPr
                 </h2>
                 <button
                   onClick={onClose}
-                  className="text-text-secondary hover:text-text-primary transition-colors rounded-md p-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                  className="text-text-secondary hover:text-text-primary hover:bg-surface-alt dark:hover:bg-dark-border dark:hover:text-text-inverse transition-colors rounded-md p-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                   aria-label="Close dialog"
                 >
                   <X className="w-5 h-5" />

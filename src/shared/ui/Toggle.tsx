@@ -39,7 +39,9 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
             'relative inline-flex shrink-0 items-center rounded-full transition-colors',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
             trackStyles[size],
-            checked ? 'bg-primary-500' : 'bg-border dark:bg-dark-border',
+            checked
+              ? 'bg-primary-500 hover:bg-primary-600'
+              : 'bg-border hover:bg-text-secondary dark:bg-dark-border dark:hover:bg-text-secondary',
             disabled && 'opacity-50 cursor-not-allowed',
           )}
           {...props}

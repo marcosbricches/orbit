@@ -55,7 +55,7 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
             )}
             activeProps={{
               className:
-                'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10',
+                'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-500 hover:bg-primary-100 dark:hover:bg-primary-500/20',
             }}
           >
             <Icon className="size-5 shrink-0" />

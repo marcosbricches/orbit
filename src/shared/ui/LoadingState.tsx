@@ -10,7 +10,7 @@ export interface LoadingStateProps {
 
 function SpinnerIndicator() {
   return (
-    <div className="w-8 h-8 rounded-full border-2 border-border dark:border-dark-border border-t-primary-500 animate-spin" />
+    <div className="w-8 h-8 rounded-full border-2 border-border dark:border-dark-border border-t-primary-500 dark:border-t-primary-100 animate-spin" />
   )
 }
 
@@ -20,7 +20,7 @@ function DotsIndicator() {
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className="w-2 h-2 rounded-full bg-primary-500 animate-bounce"
+          className="w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-100 animate-bounce"
           style={{ animationDelay: `${i * 150}ms` }}
         />
       ))}

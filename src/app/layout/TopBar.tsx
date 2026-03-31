@@ -21,7 +21,7 @@ export const TopBar = ({ sidebarCollapsed, onMobileMenuOpen }: TopBarProps) => {
           onClick={onMobileMenuOpen}
           className={cn(
             'rounded-md p-2 text-text-secondary transition-colors md:hidden',
-            'hover:bg-surface-alt hover:text-text-primary',
+            'hover:bg-surface-alt hover:text-text-primary dark:hover:bg-dark-border dark:hover:text-text-inverse',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
           )}
           aria-label="Open navigation menu"
@@ -35,7 +35,7 @@ export const TopBar = ({ sidebarCollapsed, onMobileMenuOpen }: TopBarProps) => {
         <button
           className={cn(
             'rounded-md p-2 text-text-secondary transition-colors',
-            'hover:bg-surface-alt hover:text-text-primary',
+            'hover:bg-surface-alt hover:text-text-primary dark:hover:bg-dark-border dark:hover:text-text-inverse',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
           )}
           aria-label="Search"
@@ -46,7 +46,7 @@ export const TopBar = ({ sidebarCollapsed, onMobileMenuOpen }: TopBarProps) => {
         <button
           className={cn(
             'rounded-md p-2 text-text-secondary transition-colors',
-            'hover:bg-surface-alt hover:text-text-primary',
+            'hover:bg-surface-alt hover:text-text-primary dark:hover:bg-dark-border dark:hover:text-text-inverse',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
           )}
           aria-label="Notifications"
