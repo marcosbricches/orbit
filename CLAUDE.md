@@ -12,15 +12,34 @@ A single-page task management application organized by projects, built to valida
 
 ## Stack
 
-> Populated by /scope after first run.
+| Need            | Lib                                 |
+| --------------- | ----------------------------------- |
+| Router          | @tanstack/react-router v1.168       |
+| Fetch/cache     | @tanstack/react-query v5            |
+| State           | zustand v5                          |
+| Animations      | motion v12                          |
+| Icons           | lucide-react                        |
+| Styling         | Tailwind v4                         |
+| Design identity | Orbit Clarity (indigo/slate, Inter) |
 
 ## Architecture
 
-> Populated by /scope (app shell + shared/ui).
+src/app/
+├── App.tsx (<50 lines)
+├── providers/AppProviders.tsx (QueryClientProvider)
+├── routes/AppRoutes.tsx (TanStack Router code-based routes)
+└── layout/ (Sidebar, TopBar, MobileNav, AppLayout)
+
+shared/ui/: Button, Input, Select, Textarea, Checkbox, Toggle, Card, Badge, Avatar, Skeleton, Dialog, Tooltip, Toast, Separator, EmptyState, ErrorState, LoadingState (17 components)
 
 ## Routing
 
-> Populated by /scope (root routes), expanded by /build (feature routes).
+Router: TanStack Router (code-based, no file-gen)
+
+- / → redirect to /dashboard
+- /login, /register → public (no layout)
+- /dashboard, /projects, /projects/$projectId, /tasks → protected (AppLayout)
+- /design-system → dev-only showcase route
 
 ## Stores
 
