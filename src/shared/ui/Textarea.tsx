@@ -27,7 +27,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={cn(
             'min-h-[80px] w-full resize-y rounded-md border border-border bg-surface px-3 py-2 text-sm text-text-primary',
             'placeholder:text-text-secondary transition-colors hover:border-text-secondary',
-            'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 focus:border-primary-500',
+            'focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-primary-500 focus-visible:border-transparent',
             'dark:bg-dark-surface dark:border-dark-border dark:text-text-inverse',
             error &&
               'border-status-error focus-visible:outline-status-error hover:border-status-error',

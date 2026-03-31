@@ -69,7 +69,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
             className={cn(
               'flex h-10 w-full items-center justify-between rounded-md border border-border bg-surface px-3 text-sm text-text-primary',
               'transition-colors hover:border-text-secondary cursor-pointer',
-              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500',
+              'focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-primary-500 focus-visible:border-transparent',
               'dark:bg-dark-surface dark:border-dark-border dark:text-text-inverse',
               error &&
                 'border-status-error focus-visible:outline-status-error hover:border-status-error',
