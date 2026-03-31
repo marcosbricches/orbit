@@ -120,7 +120,12 @@ export const DesignSystemPage = () => {
         <div className="grid grid-cols-4 gap-4 sm:grid-cols-6">
           {colorSwatches.map((swatch) => (
             <div key={swatch.name} className="flex flex-col items-center gap-2">
-              <div className={cn('w-16 h-16 rounded-lg border border-border', swatch.className)} />
+              <div
+                className={cn(
+                  'w-16 h-16 rounded-lg border border-border dark:border-dark-border',
+                  swatch.className,
+                )}
+              />
               <span className="text-xs text-text-secondary text-center">{swatch.name}</span>
             </div>
           ))}
@@ -348,22 +353,22 @@ export const DesignSystemPage = () => {
         <SubHeading>Tooltip</SubHeading>
         <div className="flex items-center gap-6 py-8 justify-center">
           <Tooltip content="Tooltip on top" side="top">
-            <button className="p-2 rounded-md border border-border text-text-primary dark:text-text-inverse hover:bg-surface-alt transition-colors">
+            <button className="p-2 rounded-md border border-border dark:border-dark-border text-text-primary dark:text-text-inverse hover:bg-surface-alt dark:hover:bg-dark-border transition-colors">
               <ArrowUp className="w-5 h-5" />
             </button>
           </Tooltip>
           <Tooltip content="Tooltip on bottom" side="bottom">
-            <button className="p-2 rounded-md border border-border text-text-primary dark:text-text-inverse hover:bg-surface-alt transition-colors">
+            <button className="p-2 rounded-md border border-border dark:border-dark-border text-text-primary dark:text-text-inverse hover:bg-surface-alt dark:hover:bg-dark-border transition-colors">
               <ArrowDown className="w-5 h-5" />
             </button>
           </Tooltip>
           <Tooltip content="Tooltip on left" side="left">
-            <button className="p-2 rounded-md border border-border text-text-primary dark:text-text-inverse hover:bg-surface-alt transition-colors">
+            <button className="p-2 rounded-md border border-border dark:border-dark-border text-text-primary dark:text-text-inverse hover:bg-surface-alt dark:hover:bg-dark-border transition-colors">
               <ArrowLeft className="w-5 h-5" />
             </button>
           </Tooltip>
           <Tooltip content="Tooltip on right" side="right">
-            <button className="p-2 rounded-md border border-border text-text-primary dark:text-text-inverse hover:bg-surface-alt transition-colors">
+            <button className="p-2 rounded-md border border-border dark:border-dark-border text-text-primary dark:text-text-inverse hover:bg-surface-alt dark:hover:bg-dark-border transition-colors">
               <ArrowRight className="w-5 h-5" />
             </button>
           </Tooltip>

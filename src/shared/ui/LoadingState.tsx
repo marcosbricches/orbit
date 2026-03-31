@@ -10,7 +10,7 @@ export interface LoadingStateProps {
 
 function SpinnerIndicator() {
   return (
-    <div className="w-8 h-8 rounded-full border-2 border-border border-t-primary-500 animate-spin" />
+    <div className="w-8 h-8 rounded-full border-2 border-border dark:border-dark-border border-t-primary-500 animate-spin" />
   )
 }
 
