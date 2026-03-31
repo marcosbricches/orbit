@@ -38,7 +38,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
             onError={() => setImgError(true)}
           />
         ) : (
-          <span className="text-primary-600 dark:text-primary-100 font-medium select-none">
+          <span className="text-primary-600 dark:text-text-inverse font-medium select-none">
             {fallback}
           </span>
         )}
