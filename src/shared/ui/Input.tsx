@@ -30,7 +30,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 focus:border-primary-500',
             'dark:bg-dark-surface dark:border-dark-border dark:text-text-inverse',
             error && 'border-status-error focus:ring-status-error/50 focus:border-status-error',
-            disabled && 'opacity-50 cursor-not-allowed bg-surface-alt',
+            disabled && 'opacity-50 cursor-not-allowed bg-surface-alt dark:bg-dark-border',
           )}
           aria-invalid={error ? true : undefined}
           aria-describedby={error && inputId ? `${inputId}-error` : undefined}
